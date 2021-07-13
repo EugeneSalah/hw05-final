@@ -1,0 +1,38 @@
+<!-- templates/about/author.html -->
+{% extends "misc/base.html" %}
+{% block title %}О Технологиях{% endblock %}
+{% block content %}
+  <div class="row">
+    <!-- Левый вспомогательный блок -->
+    <div class="col-lg-4mb-4 mt-2">
+      <div class="card">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="h3">
+                Технологии
+              </div> <!-- "h3" -->
+            </li>
+            <li class="list-group-item">
+              <div class="h6 text-muted">
+                Язык Python 3.92<br>
+                Фреймворк Django 2.2.19<br>
+                Фреймворк Bootstrap
+              </div> <!-- "h6 text-muted" -->
+            </li>
+          </ul>
+        </div> <!-- "card-body" -->
+      </div> <!-- "card" -->
+    </div> <!-- "col-md-3 mb-3 mt-1" -->
+    <!-- Тело страницы -->
+    <div class="col-md-9">
+      <div class="card-body">
+        <div class="card-text">
+          <p>Приложение было создано с помощью Pycharm.<br>
+            <s>А также на создание приложения ушло приличное количество нервных
+              клеток.</s></p>
+        </div>  <!-- "card-text" -->
+      </div>  <!-- "card-body" -->
+    </div>  <!-- "col-md-9" -->
+  </div>  <!-- "row" -->
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "misc/base.html" %}
+{% block title %}
+    Редактировать профиль
+{% endblock %}
+{% block content %}
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8 mb-3 mt-1">
+        <div class="card">
+          <div class="card-header">
+              Редактировать профиль
+          </div> <!--"card-header" -->
+          <div class="card-body">
+
+            <form action="." method="post" enctype="multipart/form-data">
+
+              {{ user_form.as_p }}
+              {{ profile_form.as_p }}
+              {% csrf_token %}
+
+                <div class="form-group row"
+                     aria-required={{ field.field.required }}>
+                  <label for="{{ field.id_for_label }}"
+                         class="col-md-12 col-form-label text-md-right">
+                    {{ field.label }}{% if field.required %}
+                      <span class="required">*
+                                </span>{% endif %}</label>
+                  <div class="col-md-12">
+                    {% if field.help_text %}
+                      <small id="{{ field.id_for_label }}-help"
+                             class="form-text text-muted">
+                        {{ field.help_text|safe }}</small>
+                         {% endif %}
+
+                  </div> <!-- "col-md-11"-->
+                </div> <!-- "form-group row"-->
+              <div class="col-md-5 offset-md-7">
+                <p><input type="submit" class="btn btn-primary" value="Сохранить">
+                </p>
+
+              </div> <!-- "col-md-5 offset-md-11"-->
+            </form>
+          </div> <!-- "card-body"-->
+        </div> <!-- "card"-->
+      </div> <!-- col-md-8 mb-3 mt-1-->
+    </div> <!-- row-->
+  </main>
+{% endblock %}

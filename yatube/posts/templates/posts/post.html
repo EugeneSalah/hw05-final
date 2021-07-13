@@ -1,0 +1,17 @@
+{% extends "misc/base.html" %}
+{% block title %} Просмотр записи {% endblock %}
+{% block content %}
+  {% load user_filters %}
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-md-3 mb-3 mt-1">
+        {% include "posts/card_author.html" with post=post %}
+      </div> <!--"col-md-3 mb-3 mt-1"-->
+      <div class="col-md-9">
+        <!-- Пост -->
+       {% include "posts/post_item.html" with post=post %}
+      {% include "posts/comments.html" with post=post form=form comments=comments %}
+      </div> <!--"col-md-9"-->
+    </div> <!--"row"-->
+  </main>
+{% endblock %}
